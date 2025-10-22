@@ -6,13 +6,13 @@
 
 :root {
   --primary: #0ea5e9;        /* Sky Blue */
-  --secondary: #3b82f6;      /* Blue */
-  --accent: #06b6d4;         /* Cyan */
-  --purple: #6366f1;         /* Indigo */
-  --dark: #f8fafc;           /* Almost White */
-  --dark-light: #e2e8f0;     /* Light Gray-Blue */
-  --text: #1e293b;           /* Dark Slate */
-  --text-dim: #64748b;       /* Slate */
+  --secondary: #6366f1;      /* Indigo */
+  --accent: #3b82f6;         /* Blue */
+  --purple: #8b5cf6;         /* Purple */
+  --dark: #f8fafc;           /* Very Light Gray */
+  --dark-light: #f1f5f9;     /* Light Gray */
+  --text: #0f172a;           /* Dark Blue-Gray */
+  --text-dim: #475569;       /* Medium Gray */
 }
 
 html {
