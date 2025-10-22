@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patho-Genius — Project Site</title>
+  <meta name="description" content="Research notes, demos, and docs by patho-genius." />
+  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Patho-Genius</h1>
+    <p>Projects • Notes • Demos</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Welcome</h2>
+      <p>Bu site, projelerimi ve dökümantasyonumu barındırır. 👋</p>
+    </section>
+
+    <section>
+      <h2>Featured Project</h2>
+      <p><a href="/projects/my-project/">My Project</a> — kısa açıklama.</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="y"></span> patho-genius</small>
+  </footer>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
