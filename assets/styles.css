@@ -331,9 +331,10 @@ body {
 /* === TEAM SECTION === */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   margin-top: 3rem;
+  justify-items: center;
 }
 
 .team-card {
@@ -470,6 +471,12 @@ body {
 }
 
 /* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .nav__wrap {
     padding: 1rem;
