@@ -1,9 +1,3 @@
-/* ============================================
-   PATHOGENIUS - Modern Biotech Design
-   Color Palette: Electric Blue, Neon Teal, Deep Purple
-   ============================================ */
-
-/* === RESET & BASE === */
 * {
   margin: 0;
   padding: 0;
@@ -11,15 +5,14 @@
 }
 
 :root {
-  /* Color Palette - Cool & Futuristic */
-  --primary: #00f0ff;        /* Electric Cyan */
-  --secondary: #6366f1;      /* Vibrant Indigo */
-  --accent: #3b82f6;         /* Bright Blue */
-  --purple: #8b5cf6;         /* Electric Purple */
-  --dark: #0a0e27;           /* Deep Space Blue */
-  --dark-light: #1a1f3a;     /* Dark Blue */
-  --text: #e0f2fe;           /* Light Cyan */
-  --text-dim: #94a3b8;       /* Muted Blue-Gray */
+  --primary: #0ea5e9;        /* Sky Blue */
+  --secondary: #3b82f6;      /* Blue */
+  --accent: #06b6d4;         /* Cyan */
+  --purple: #6366f1;         /* Indigo */
+  --dark: #f8fafc;           /* Almost White */
+  --dark-light: #e2e8f0;     /* Light Gray-Blue */
+  --text: #1e293b;           /* Dark Slate */
+  --text-dim: #64748b;       /* Slate */
 }
 
 html {
