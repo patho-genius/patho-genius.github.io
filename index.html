@@ -3,36 +3,89 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Patho-Genius — Project Site</title>
-  <meta name="description" content="Research notes, demos, and docs by patho-genius." />
-  <link rel="icon" href="/assets/favicon.png" />
+  <title>Patho-Genius</title>
+  <meta name="description" content="Project web page for Patho-Genius" />
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
-  <header class="container">
-    <h1>Patho-Genius</h1>
-    <p>Projects • Notes • Demos</p>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/projects/">Projects</a>
-      <a href="/about/">About</a>
-    </nav>
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="nav__wrap">
+      <a class="brand" href="#home">Pathogenius</a>
+      <nav class="nav__links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>Welcome</h2>
-      <p>Bu site, projelerimi ve dökümantasyonumu barındırır. 👋</p>
-    </section>
+  <!-- HOME / HERO -->
+  <section id="home" class="section hero">
+    <div class="container">
+      <h1 class="hero__title">PATHOGENIUS</h1>
+      <p class="hero__subtitle">2025-2026 CS 491 Project</p>
+      <a class="btn" href="#about">Learn More</a>
+    </div>
+  </section>
 
-    <section>
-      <h2>Featured Project</h2>
-      <p><a href="/projects/my-project/">My Project</a> — kısa açıklama.</p>
-    </section>
-  </main>
+  <!-- ABOUT -->
+  <section id="about" class="section section--light">
+    <div class="container narrow">
+      <h2>About</h2>
+      <p>(Project Description)</p>
+    </div>
+  </section>
 
-  <footer class="container">
-    <small>© <span id="y"></span> patho-genius</small>
+  <!-- TEAM MEMBERS -->
+  <section id="team" class="section">
+    <div class="container">
+      <h2 class="center">Team</h2>
+
+      <div class="team">
+        <!-- Team Member 1 -->
+        <div class="card">
+          <div class="avatar">
+            <img src="/assets/img/profile.jpg" />
+          </div>
+          <h3>Ata Uzay Kuzey</h3>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="card">
+          <div class="avatar">
+            <img src="/assets/img/profile.jpg" />
+          </div>
+          <h3>Ege Ateş</h3>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="card">
+          <div class="avatar">
+            <img src="/assets/img/profile.jpg" />
+          </div>
+          <h3>Nazlı Apaydın</h3>
+        </div>
+        <!-- Team Member 4 -->
+        <div class="card">
+          <div class="avatar">
+            <img src="/assets/img/profile.jpg" />
+          </div>
+          <h3>Yiğit Ali Doğan</h3>
+        </div>
+        <!-- Team Member 5 -->
+        <div class="card">
+          <div class="avatar">
+            <img src="/assets/img/profile.jpg" />
+          </div>
+          <h3>Yunus Günay</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="y"></span> Pathogenius</small>
+    </div>
   </footer>
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
