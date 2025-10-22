@@ -5,14 +5,14 @@
 }
 
 :root {
-  --primary: #0ea5e9;        /* Sky Blue */
-  --secondary: #6366f1;      /* Indigo */
-  --accent: #3b82f6;         /* Blue */
-  --purple: #8b5cf6;         /* Purple */
-  --dark: #f8fafc;           /* Very Light Gray */
-  --dark-light: #f1f5f9;     /* Light Gray */
-  --text: #0f172a;           /* Dark Blue-Gray */
-  --text-dim: #475569;       /* Medium Gray */
+  --primary: #00f0ff;        /* Electric Cyan */
+  --secondary: #6366f1;      /* Vibrant Indigo */
+  --accent: #3b82f6;         /* Bright Blue */
+  --purple: #8b5cf6;         /* Electric Purple */
+  --dark: #0a0e27;           /* Deep Space Blue */
+  --dark-light: #1a1f3a;     /* Dark Blue */
+  --text: #e0f2fe;           /* Light Cyan */
+  --text-dim: #94a3b8;       /* Muted Blue-Gray */
 }
 
 html {
