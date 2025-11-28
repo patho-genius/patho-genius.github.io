@@ -5,14 +5,14 @@
 }
 
 :root {
-  --primary: #7dd3fc;        /* pastel cyan  */
-  --secondary: #c4b5fd;      /* soft violet  */
-  --accent: #a5b4fc;         /* light indigo */
-  --purple: #d8b4fe;         /* lilac        */
-  --dark: #f1f5f9;           /* light background (was dark) */
-  --dark-light: #ffffff;     /* full white sections */
-  --text: #1e293b;           /* slate-900 */
-  --text-dim: #475569;       /* slate-600 */
+  --primary: #7dd3fc;
+  --secondary: #c4b5fd;
+  --accent: #a5b4fc;
+  --purple: #d8b4fe;
+  --dark: #f1f5f9;
+  --dark-light: #ffffff;
+  --text: #1e293b;
+  --text-dim: #475569;
 }
 
 html {
@@ -42,10 +42,11 @@ body {
 .bg-gradient::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  /* FIX: Increased size and negative offset to prevent white edges during rotation */
+  top: -100%; 
+  left: -100%; 
+  width: 300%; 
+  height: 300%; 
   background: 
     radial-gradient(circle at 20% 50%, rgba(0, 240, 255, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
@@ -277,20 +278,21 @@ body {
 }
 
 @keyframes float {
+  /* FIX: Adjusted values to keep particles visible and floating around the center */
   0%, 100% { 
     transform: translateY(0) translateX(0) scale(1); 
     opacity: 0.4;
   }
   25% { 
-    transform: translateY(-100px) translateX(50px) scale(1.2); 
+    transform: translateY(-50px) translateX(50px) scale(1.2); 
     opacity: 0.6;
   }
   50% { 
-    transform: translateY(-200px) translateX(-30px) scale(0.8); 
+    transform: translateY(50px) translateX(-30px) scale(0.8); 
     opacity: 0.3;
   }
   75% { 
-    transform: translateY(-150px) translateX(80px) scale(1.1); 
+    transform: translateY(-20px) translateX(80px) scale(1.1); 
     opacity: 0.5;
   }
 }
@@ -326,6 +328,125 @@ body {
   font-size: 1.2rem;
   color: var(--text-dim);
   line-height: 1.8;
+}
+
+.visual-accent {
+    width: 60px;
+    height: 4px;
+    background: var(--purple);
+    margin: 2rem auto;
+    border-radius: 2px;
+}
+
+/* --- DOCUMENTS SECTION STYLES --- */
+.document-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.doc-card {
+  background: var(--dark-light); 
+  border: 1px solid rgba(148,163,184,0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text);
+  
+  cursor: default; 
+  
+  /* Flexbox for horizontal layout (Left Icon | Center Content | Right Icon) */
+  display: flex;
+  align-items: center; 
+  gap: 1.5rem;
+  
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove hover effect from the container itself */
+.doc-card:hover {
+  transform: none;
+  border-color: rgba(148,163,184,0.2); 
+  box-shadow: none; 
+}
+
+.doc-icon {
+  flex-shrink: 0; 
+  width: 32px;
+  height: 32px;
+  color: var(--primary); 
+  line-height: 1;
+}
+
+.doc-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.doc-text {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-text h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.25rem 0;
+}
+
+.doc-text p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem; 
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  line-clamp: 2; /* FIX: Added standard line-clamp property */
+}
+
+/* New: Styling for the VIEW LINK */
+.view-link {
+    font-weight: 500;
+    color: var(--purple); 
+    text-decoration: none;
+    align-self: flex-start; 
+    transition: color 0.2s ease;
+}
+
+.view-link:hover {
+    text-decoration: underline;
+    color: var(--accent);
+}
+
+/* New: Styling for the DOWNLOAD ICON (made an explicit link) */
+.download-icon {
+  flex-shrink: 0; 
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer; 
+}
+
+/* New: Tooltip text for download icon (shows "Download Report" from HTML title attribute) */
+.download-icon:hover {
+  transform: translateY(2px) scale(1.1); 
+  color: var(--primary);
+}
+
+.download-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
 }
 
 /* === TEAM SECTION === */
@@ -475,6 +596,9 @@ body {
   .team-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+  .document-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -503,6 +627,27 @@ body {
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .document-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .doc-card {
+    padding: 1rem;
+    flex-wrap: wrap; 
+  }
+
+  .doc-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .download-icon {
+    display: none; 
   }
 
   .hero__cta {
