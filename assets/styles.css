@@ -338,6 +338,14 @@ body {
     border-radius: 2px;
 }
 
+.supervisor-info {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-top: 2rem; 
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(148,163,184,0.3);
+}
 /* --- DOCUMENTS SECTION STYLES --- */
 .document-grid {
   display: grid;
