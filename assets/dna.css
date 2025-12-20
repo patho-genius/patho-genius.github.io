@@ -1,8 +1,8 @@
-
 :root {
-  --dna-opacity: 0.55;
-  --dna-size: min(720px, 62vw);
-  --dna-position: 85% 55%;
+  --dna-opacity: 0.35;
+  --dna-size: min(760px, 62vw);
+  --dna-position: 12% 55%;
+  --dna-rotate-seconds: 38s;
 }
 
 /* DNA watermark overlay on the background container */
@@ -12,6 +12,7 @@
   inset: 0;
   pointer-events: none;
 
+  /* "Ink" color: will appear ONLY where mask is visible */
   background: linear-gradient(
     180deg,
     rgba(99, 102, 241, 0.22),
@@ -19,9 +20,13 @@
   );
 
   opacity: var(--dna-opacity);
-  filter: blur(0.4px);
+  filter: blur(0.35px);
 
-  /* ===== Standard property ===== */
+  /* Rotate around a point near the left side */
+  transform-origin: 18% 55%;
+  will-change: transform;
+
+  /* ===== Standard properties ===== */
   mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 900'>\
   <path d='M150 0 C 60 100, 240 200, 150 300 C 60 400, 240 500, 150 600 C 60 700, 240 800, 150 900' fill='none' stroke='black' stroke-width='18'/>\
@@ -41,7 +46,7 @@
   mask-size: var(--dna-size);
   mask-position: var(--dna-position);
 
-  /* ===== WebKit property (Chrome/Safari/Edge) ===== */
+  /* ===== WebKit properties (Chrome/Safari/Edge) ===== */
   -webkit-mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 900'>\
   <path d='M150 0 C 60 100, 240 200, 150 300 C 60 400, 240 500, 150 600 C 60 700, 240 800, 150 900' fill='none' stroke='black' stroke-width='18'/>\
@@ -61,16 +66,18 @@
   -webkit-mask-size: var(--dna-size);
   -webkit-mask-position: var(--dna-position);
 
-  /* Gentle motion (no rotation) */
-  animation: dnaFloat 18s ease-in-out infinite;
-  will-change: transform;
+  /* Rotate + slight drift */
+  animation: dnaSpin var(--dna-rotate-seconds) linear infinite;
 }
 
-@keyframes dnaFloat {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(-18px, 12px, 0); }
+/* Rotation + tiny vertical drift (still smooth) */
+@keyframes dnaSpin {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%  { transform: translate3d(0, 10px, 0) rotate(180deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(360deg); }
 }
 
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .bg-gradient::after {
     animation: none;
