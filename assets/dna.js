@@ -27,17 +27,21 @@
     const h = canvas.getBoundingClientRect().height;
 
     return {
-      cx: Math.max(140, w * 0.16),     // left placement
-      cy: h * 0.52,                   // vertically centered
-      radius: Math.min(140, w * 0.10),
-      height: Math.min(h * 0.85, 900),
-      turns: 4.2,                     // number of helix turns on screen
-      rungEvery: 10,                  // rung spacing (lower = more rungs)
-      points: 420,                    // sampling resolution
-      drift: reduceMotion ? 0 : 10,   // gentle drift
-      speed: reduceMotion ? 0 : 0.65  // twist speed
+        cx: Math.max(140, w * 0.16),        // left placement
+        cy: h * 0.52,
+
+        radius: Math.min(70, w * 0.055),    // THIN DNA
+        height: Math.min(h * 0.98, 1400),   // LONG DNA
+        turns: 6.2,                         // MORE LOOPS
+
+        rungEvery: 12,
+        points: 520,
+
+        drift: reduceMotion ? 0 : 8,
+        speed: reduceMotion ? 0 : 0.65
     };
   }
+
 
   // Particles for "sparkly" look
   const sparkleCount = 180;
