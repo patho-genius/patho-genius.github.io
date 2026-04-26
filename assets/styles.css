@@ -473,6 +473,49 @@ body {
   fill: currentColor;
 }
 
+/* === TEAM GROUP PHOTO === */
+.team-group-photo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.team-group-photo-frame {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid rgba(125, 211, 252, 0.35);
+  box-shadow: 0 16px 48px rgba(165, 180, 252, 0.2), 0 4px 16px rgba(0, 0, 0, 0.06);
+  max-width: 860px;
+  width: 100%;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.team-group-photo-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--purple));
+  z-index: 2;
+}
+
+.team-group-photo-frame:hover {
+  box-shadow: 0 24px 64px rgba(165, 180, 252, 0.35), 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.team-group-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center top;
+}
+
 /* === TEAM SECTION === */
 .team-grid {
   display: grid;
