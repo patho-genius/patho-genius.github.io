@@ -20,11 +20,11 @@
       isBacteria,
       x: leftPct * W,
       y: topPct  * H,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
+      vx: (Math.random() - 0.5) * 0.15,
+      vy: (Math.random() - 0.5) * 0.15,
       wander: Math.random() * Math.PI * 2,
       angle: Math.random() * 360,
-      baseOpacity: 0.38 + Math.random() * 0.22,
+      baseOpacity: 0.15 + Math.random() * 0.1,
     };
   });
 
@@ -67,12 +67,12 @@
     ripple.addEventListener('animationend', () => ripple.remove());
   });
 
-  const HOVER_R  = 140;
-  const CLICK_R  = 300;
-  const WANDER   = 0.06;
-  const DAMP     = 0.975;
-  const MAX_V    = 1.0;
-  const MAX_FLEE = 10;
+  const HOVER_R  = 80;
+  const CLICK_R  = 150;
+  const WANDER   = 0.018;
+  const DAMP     = 0.985;
+  const MAX_V    = 0.3;
+  const MAX_FLEE = 4;
 
   function frame() {
     particles.forEach(p => {
@@ -83,10 +83,10 @@
 
       // Hover repulsion
       if (near) {
-        const f = ((HOVER_R - hd) / HOVER_R) * 1.2;
+        const f = ((HOVER_R - hd) / HOVER_R) * 0.5;
         p.vx += (hx / hd) * f;
         p.vy += (hy / hd) * f;
-        p.el.style.opacity = Math.min(0.85, p.baseOpacity + 0.3);
+        p.el.style.opacity = Math.min(0.35, p.baseOpacity + 0.12);
       } else {
         p.el.style.opacity = p.baseOpacity;
       }
@@ -97,7 +97,7 @@
         const cy = p.y - clickImpulse.y;
         const cd = Math.sqrt(cx * cx + cy * cy) || 1;
         if (cd < CLICK_R) {
-          const f = ((CLICK_R - cd) / CLICK_R) * 9;
+          const f = ((CLICK_R - cd) / CLICK_R) * 3;
           p.vx += (cx / cd) * f;
           p.vy += (cy / cd) * f;
         }
