@@ -6,10 +6,10 @@
 }
 
 :root {
-  --primary: #7dd3fc;
-  --secondary: #c4b5fd;
-  --accent: #a5b4fc;
-  --purple: #d8b4fe;
+  --primary: #008080;
+  --secondary: #006666;
+  --accent: #10B981;
+  --purple: #006666;
   --dark: #f1f5f9;
   --dark-light: #ffffff;
   --text: #1e293b;
@@ -17,7 +17,7 @@
 
   /* Background tuning */
   --bg-base-1: #ffffff;
-  --bg-base-2: #f1f5f9;
+  --bg-base-2: #f4fafa;
 }
 
 html {
@@ -47,10 +47,10 @@ body {
   position: absolute;
   inset: -35%;
   background:
-    radial-gradient(circle at 20% 50%, rgba(0, 240, 255, 0.14) 0%, transparent 55%),
-    radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 55%),
-    radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.10) 0%, transparent 55%),
-    radial-gradient(circle at 70% 25%, rgba(56, 189, 248, 0.08) 0%, transparent 55%);
+    radial-gradient(circle at 20% 50%, rgba(0, 128, 128, 0.14) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(0, 102, 102, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 40% 20%, rgba(16, 185, 129, 0.10) 0%, transparent 55%),
+    radial-gradient(circle at 70% 25%, rgba(0, 128, 128, 0.08) 0%, transparent 55%);
   filter: blur(10px);
   animation: bgDrift 18s ease-in-out infinite;
   will-change: transform;
@@ -110,7 +110,7 @@ body {
 
 .brand {
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 500;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -177,15 +177,15 @@ body {
 
 .hero__title {
   font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 900;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 40%, #c084fc 80%);
+  background: linear-gradient(135deg, #008080 0%, #006666 50%, #007070 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.02em;
   animation: fadeInUp 0.8s ease-out;
-  text-shadow: 0 0 40px rgba(165, 180, 252, 0.4);
+  text-shadow: 0 0 40px rgba(0, 128, 128, 0.4);
 }
 
 .hero__subtitle {
@@ -221,8 +221,8 @@ body {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #1e293b;
-  box-shadow: 0 4px 20px rgba(148, 163, 184, 0.2);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 128, 128, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -244,20 +244,20 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(165, 180, 252, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 128, 128, 0.4);
 }
 
 .btn-secondary {
   border-color: var(--accent);
   color: var(--accent);
-  background: rgba(165, 180, 252, 0.1);
+  background: rgba(16, 185, 129, 0.1);
 }
 
 .btn-secondary:hover {
   background: var(--accent);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
 }
 
 /* === ANIMATIONS === */
@@ -287,14 +287,26 @@ body {
 
 .particle {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  opacity: 0.2;
-  box-shadow: 0 0 8px rgba(165, 180, 252, 0.3);
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  background-size: contain;
+  background-repeat: no-repeat;
   animation: float 15s infinite ease-in-out;
   will-change: transform, opacity;
+}
+
+/* Virus: round body + lollipop spikes */
+.particle:nth-child(odd) {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><line x1='50' y1='25' x2='50' y2='14' stroke='%23008080' stroke-width='2.5' stroke-linecap='round'/><circle cx='50' cy='9' r='5' fill='%2310B981'/><line x1='50' y1='25' x2='50' y2='14' stroke='%23008080' stroke-width='2.5' stroke-linecap='round' transform='rotate(45 50 50)'/><circle cx='50' cy='9' r='5' fill='%2310B981' transform='rotate(45 50 50)'/><line x1='50' y1='25' x2='50' y2='14' stroke='%23008080' stroke-width='2.5' stroke-linecap='round' transform='rotate(90 50 50)'/><circle cx='50' cy='9' r='5' fill='%2310B981' transform='rotate(90 50 50)'/><line x1='50' y1='25' x2='50' y2='14' stroke='%23008080' stroke-width='2.5' stroke-linecap='round' transform='rotate(135 50 50)'/><circle cx='50' cy='9' r='5' fill='%2310B981' transform='rotate(135 50 50)'/><line x1='50' y1='25' x2='50' y2='14' stroke='%23008080' stroke-width='2.5' stroke-linecap='round' transform='rotate(180 50 50)'/><circle cx='50' cy='9' r='5' fill='%2310B981' transform='rotate(180 50 50)'/><line x1='50' y1='25' x2='50' y2='14' stroke='%23008080' stroke-width='2.5' stroke-linecap='round' transform='rotate(225 50 50)'/><circle cx='50' cy='9' r='5' fill='%2310B981' transform='rotate(225 50 50)'/><line x1='50' y1='25' x2='50' y2='14' stroke='%23008080' stroke-width='2.5' stroke-linecap='round' transform='rotate(270 50 50)'/><circle cx='50' cy='9' r='5' fill='%2310B981' transform='rotate(270 50 50)'/><line x1='50' y1='25' x2='50' y2='14' stroke='%23008080' stroke-width='2.5' stroke-linecap='round' transform='rotate(315 50 50)'/><circle cx='50' cy='9' r='5' fill='%2310B981' transform='rotate(315 50 50)'/><circle cx='50' cy='50' r='25' fill='%23008080' opacity='0.85'/><circle cx='43' cy='42' r='4.5' fill='%23006666' opacity='0.5'/><circle cx='58' cy='50' r='3' fill='%23006666' opacity='0.4'/><circle cx='45' cy='58' r='3.5' fill='%23006666' opacity='0.45'/><circle cx='40' cy='38' r='5' fill='white' opacity='0.2'/></svg>");
+}
+
+/* Bacteria: elongated pill + cilia, tilted */
+.particle:nth-child(even) {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g transform='rotate(-30 50 50)'><line x1='65' y1='50' x2='72' y2='50' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='63.9' y1='60.7' x2='70.3' y2='63.4' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='60.6' y1='69.8' x2='65.6' y2='74.7' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='55.7' y1='75.8' x2='58.5' y2='82.2' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='50' y1='78' x2='50' y2='85' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='44.3' y1='75.8' x2='41.5' y2='82.2' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='39.4' y1='69.8' x2='34.4' y2='74.7' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='36.1' y1='60.7' x2='29.7' y2='63.4' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='35' y1='50' x2='28' y2='50' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='36.1' y1='39.3' x2='29.7' y2='36.6' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='39.4' y1='30.2' x2='34.4' y2='25.3' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='44.3' y1='24.2' x2='41.5' y2='17.8' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='50' y1='22' x2='50' y2='15' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='55.7' y1='24.2' x2='58.5' y2='17.8' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='60.6' y1='30.2' x2='65.6' y2='25.3' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><line x1='63.9' y1='39.3' x2='70.3' y2='36.6' stroke='%23047857' stroke-width='2' stroke-linecap='round'/><ellipse cx='50' cy='50' rx='15' ry='28' fill='%23059669' opacity='0.85'/><circle cx='45' cy='43' r='3.5' fill='%23047857' opacity='0.5'/><circle cx='55' cy='52' r='2.5' fill='%23047857' opacity='0.45'/><circle cx='47' cy='60' r='3' fill='%23047857' opacity='0.4'/><circle cx='40' cy='40' r='4' fill='white' opacity='0.18'/></g></svg>");
+  animation-duration: 20s;
 }
 
 @keyframes float {
@@ -316,6 +328,25 @@ body {
   }
 }
 
+.particle-ripple {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(16, 185, 129, 0.7);
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple-out 0.75s ease-out forwards;
+  z-index: 3;
+}
+
+@keyframes ripple-out {
+  to {
+    transform: translate(-50%, -50%) scale(58);
+    opacity: 0;
+  }
+}
+
 /* === SECTIONS === */
 .section {
   padding: 6rem 2rem;
@@ -330,7 +361,7 @@ body {
 
 .section-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
+  font-weight: 500;
   text-align: center;
   margin-bottom: 4rem;
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--purple) 100%);
@@ -486,8 +517,8 @@ body {
   width: min(860px, 100%);
   border-radius: 24px;
   overflow: hidden;
-  border: 2px solid rgba(125, 211, 252, 0.35);
-  box-shadow: 0 16px 48px rgba(165, 180, 252, 0.2), 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 2px solid rgba(0, 128, 128, 0.35);
+  box-shadow: 0 16px 48px rgba(0, 128, 128, 0.2), 0 4px 16px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.4s ease, transform 0.4s ease;
   will-change: transform;
 }
@@ -504,7 +535,7 @@ body {
 }
 
 .team-group-photo-frame:hover {
-  box-shadow: 0 24px 64px rgba(165, 180, 252, 0.35), 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 24px 64px rgba(0, 128, 128, 0.35), 0 8px 24px rgba(0, 0, 0, 0.08);
   transform: translateY(-4px);
 }
 
@@ -560,7 +591,7 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 128, 128, 0.1) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -568,7 +599,7 @@ body {
 .team-card:hover {
   transform: translateY(-8px);
   border-color: var(--accent);
-  box-shadow: 0 12px 30px rgba(165, 180, 252, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 128, 128, 0.3);
   background: #f9fafb;
 }
 
@@ -587,16 +618,16 @@ body {
   margin: 0 auto 1.5rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid rgba(125, 211, 252, 0.4);
+  border: 3px solid rgba(0, 128, 128, 0.4);
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 128, 128, 0.2);
 }
 
 .team-card:hover .avatar {
   border-color: var(--primary);
   transform: scale(1.08) rotate(5deg);
-  box-shadow: 0 12px 48px rgba(0, 240, 255, 0.4);
+  box-shadow: 0 12px 48px rgba(0, 128, 128, 0.4);
 }
 
 .avatar img {
@@ -622,12 +653,12 @@ body {
   height: 36px;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 240, 255, 0.1);
+  background: rgba(0, 128, 128, 0.1);
   border-radius: 10px;
   color: var(--primary);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  border: 1px solid rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(0, 128, 128, 0.2);
   position: relative;
   z-index: 2;
 }
@@ -636,7 +667,7 @@ body {
   background: var(--primary);
   color: var(--dark);
   transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 240, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.4);
   border-color: var(--primary);
 }
 
