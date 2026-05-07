@@ -114,6 +114,15 @@ body {
   text-decoration: none;
   letter-spacing: -0.3px;
   transition: letter-spacing 0.3s ease, color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand__logo {
+  height: 1.8rem;
+  width: auto;
+  display: block;
 }
 
 .brand:hover {
@@ -164,16 +173,31 @@ body {
   z-index: 2;
 }
 
+.hero__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero__logo {
+  height: clamp(3rem, 8vw, 6rem);
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 80, 80, 0.18));
+}
+
 .hero__title {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   background: linear-gradient(135deg, #008080 0%, #006666 50%, #007070 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.02em;
-  animation: fadeInUp 0.8s ease-out;
   filter: drop-shadow(0 2px 8px rgba(0, 80, 80, 0.18));
 }
 
